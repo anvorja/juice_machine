@@ -51,6 +51,13 @@ springdoc:
     tagsSorter: alpha
     tryItOutEnabled: true
     filter: true
+    displayRequestDuration: true
+    defaultModelsExpandDepth: 2
+    defaultModelExpandDepth: 2
   show-actuator: false
   default-consumes-media-type: application/json
   default-produces-media-type: application/json
+  group-configs:
+    - group: 'jugos-api'
+      paths-to-match: '/api/jugos/**'
+      packages-to-scan: com.anborja.maquina_de_jugos.infrastructure.adapter.inbound.rest
