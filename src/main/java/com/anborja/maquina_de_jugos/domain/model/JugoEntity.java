@@ -31,7 +31,7 @@ public class JugoEntity {
     @Column(name = "tamano_vaso")
     private String tamanoVaso;
 
-    private String estado; // PREPARANDO, LISTO, ENTREGADO
+    private String estado;
 
     @Column(name = "fecha_pedido")
     private LocalDateTime fechaPedido;
