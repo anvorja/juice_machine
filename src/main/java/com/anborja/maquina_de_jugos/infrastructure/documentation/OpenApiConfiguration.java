@@ -20,23 +20,31 @@ public class OpenApiConfiguration {
                 .info(new Info()
                         .title("🍹 Máquina de Jugos API")
                         .description("""
-                                ## API REST para gestión de una máquina de jugos
+                                ## API REST para gestión de una máquina de jugos naturales
                                 
-                                Esta API permite:
-                                - 🥤 Crear pedidos de jugos personalizados
-                                - 📋 Gestionar el estado de los pedidos
-                                - 📊 Generar reportes de ventas
-                                - 🔍 Filtrar por sabor, cliente, estado y tamaño
-                                - ✨ Agregar toppings adicionales
+                                Esta API permite gestionar completamente el ciclo de vida de los pedidos de jugos:
                                 
-                                ### Estados de los jugos:
+                                ### 🚀 Funcionalidades principales:
+                                - 🥤 **Crear pedidos personalizados** con sabores, tamaños y toppings
+                                - 📋 **Gestionar estados** (PREPARANDO → LISTO → ENTREGADO)
+                                - 🔍 **Búsquedas avanzadas** por sabor, cliente, estado y tamaño
+                                - 📊 **Reportes de ventas** con estadísticas detalladas
+                                - ✨ **Modificaciones dinámicas** (agregar toppings, cambiar estados)
+                                
+                                ### 📈 Estados del flujo de trabajo:
                                 - **PREPARANDO**: El jugo está siendo elaborado
                                 - **LISTO**: El jugo está terminado y listo para entregar
                                 - **ENTREGADO**: El jugo fue entregado al cliente
                                 
-                                ### Sabores disponibles:
-                                mango, fresa, naranja, piña, manzana, pera, maracuyá, 
-                                guayaba, lulo, mora, banano, papaya
+                                ### 🥭 Sabores disponibles:
+                                `mango` • `fresa` • `naranja` • `piña` • `manzana` • `pera` • `maracuyá` • `guayaba` • `lulo` • `mora` • `banano` • `papaya`
+                                
+                                ### 🥤 Tamaños de vaso:
+                                - **Pequeño**: $3,000 (300ml)
+                                - **Mediano**: $4,000 (500ml)
+                                - **Grande**: $5,000 (700ml)
+                                
+                                *Los toppings agregan $1,000 adicionales al precio base*
                                 """)
                         .version("1.0.0")
                         .contact(new Contact()
@@ -49,20 +57,20 @@ public class OpenApiConfiguration {
                 .servers(List.of(
                         new Server()
                                 .url("http://localhost:8080")
-                                .description("Servidor de desarrollo"),
+                                .description("🛠️ Servidor de desarrollo"),
                         new Server()
                                 .url("https://api.maquinajugos.com")
-                                .description("Servidor de producción")))
+                                .description("🌐 Servidor de producción")))
                 .tags(List.of(
                         new Tag()
                                 .name("🍹 Gestión de Jugos")
-                                .description("Operaciones CRUD para pedidos de jugos"),
-                        new Tag()
-                                .name("📊 Reportes")
-                                .description("Generación de reportes de ventas y estadísticas"),
+                                .description("Operaciones CRUD principales para pedidos de jugos"),
                         new Tag()
                                 .name("🔍 Búsquedas")
-                                .description("Filtrado y búsqueda de jugos por diferentes criterios")
+                                .description("Filtrado y búsqueda de jugos por diferentes criterios"),
+                        new Tag()
+                                .name("📊 Reportes")
+                                .description("Generación de reportes de ventas y estadísticas")
                 ));
     }
 }
